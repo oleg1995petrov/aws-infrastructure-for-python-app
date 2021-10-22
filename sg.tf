@@ -42,17 +42,17 @@ resource "aws_security_group" "isg" {
   }
 }
 
-resource "aws_security_group" "ecssg" {
+/* resource "aws_security_group" "ecssg" {
   vpc_id = aws_vpc.vpc.id
   tags   = local.tags.ecssg
 
   ingress = [
     {
-      description = "ECSSG ingress"
-      from_port   = 0
-      to_port     = 0
-      protocol    = "-1"
-      cidr_blocks = ["0.0.0.0/0"]
+      description      = "ECSSG ingress"
+      from_port        = 0
+      to_port          = 0
+      protocol         = "-1"
+      cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
       prefix_list_ids  = null
       security_groups  = null
@@ -62,15 +62,15 @@ resource "aws_security_group" "ecssg" {
 
   egress = [
     {
-      description = "ECSSG egress"
-      from_port   = 0
-      to_port     = 0
-      protocol    = "-1"
-      cidr_blocks = ["0.0.0.0/0"]
+      description      = "ECSSG egress"
+      from_port        = 0
+      to_port          = 0
+      protocol         = "-1"
+      cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
       prefix_list_ids  = null
       security_groups  = null
       self             = null
     }
   ]
-}
+} */
