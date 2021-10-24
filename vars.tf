@@ -13,7 +13,7 @@ variable "num_zones" {
 variable "common_tags" {
   default = {
     Owner       = "Aleh Ventskovich"
-    Project     = "Exam_Python"
+    Project     = "Python"
     Environment = "Dev"
   }
 }
@@ -22,7 +22,7 @@ variable "vpc" {
   type = map(string)
 
   default = {
-    cidr_block = "10.0.0.0/16"
+    cidr_block = "10.1.0.0/16"
   }
 }
 
@@ -78,16 +78,16 @@ variable "asg" {
     health_check_grace_period = 60
     desired_capacity          = 2
     min_size                  = 1
-    max_size                  = 3
+    max_size                  = 4
     health_check_type         = "ELB"
   }
 }
 
-variable "cluster_name" {
+variable "ecs_cluster_name" {
   default = "python"
 }
 
-variable "service_name" {
+variable "ecs_service_name" {
   default = "python"
 }
 
@@ -111,10 +111,15 @@ variable "container" {
     family        = "python"
     name          = "hello_python"
     repo_name     = "python"
-    cpu           = 512
-    memory        = 512
+    cpu           = 256
+    memory        = 256
     essential     = true
     containerPort = 5000
     hostPort      = 0
   }
+}
+
+variable "image_tag" {
+  type    = string
+  default = "latest"
 }

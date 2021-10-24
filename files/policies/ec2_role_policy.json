@@ -20,7 +20,6 @@
                 "autoscaling:Describe*",
                 "cloudwatch:*",
                 "logs:*",
-                "sns:*",
                 "iam:GetPolicy",
                 "iam:GetPolicyVersion",
                 "iam:GetRole"
