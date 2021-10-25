@@ -25,7 +25,7 @@ locals {
     td          = merge(var.common_tags, { Name = "Task definition" })
   }
 
-  name_prefixses = {
+  name_prefises = {
     lb   = "${lower(var.common_tags.Project)}"
     lbtg = "${lower(var.common_tags.Project)}"
     lbsg = "${lower(var.common_tags.Project)}-${lower(var.common_tags.Environment)}-"
