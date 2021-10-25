@@ -10,10 +10,6 @@ resource "aws_launch_configuration" "lc" {
       cluster_name = var.ecs_cluster_name
     }
   )
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }
 
 resource "aws_autoscaling_group" "asg" {
@@ -26,8 +22,4 @@ resource "aws_autoscaling_group" "asg" {
   max_size                  = var.asg.max_size
   health_check_type         = var.asg.health_check_type
   depends_on                = [aws_ecs_cluster.ecs_cluster]
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }
