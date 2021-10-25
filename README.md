@@ -1,3 +1,3 @@
-# andersen-exam-python-infrastructure
+# AWS infrastructure
 
 ![aws_infrastructure](infrastructure.png)
